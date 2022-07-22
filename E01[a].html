@@ -8,12 +8,17 @@
     */
 
     //ENTRADA
-
+    const numeroAlunos = parseInt(prompt("Informe a quantidade de alunos que possui:"))
+    const numeroTurmas = parseInt(prompt("Informe a quantidade de turmas que possui:"))
 
     //PROCESSAMENTO
-
+    let mensagemFinal = ``
+    const mediaAlunosTurma = numeroAlunos / numeroTurmas
+    if (mediaAlunosTurma <= 30) mensagemFinal = `Você pode trabalhar sozinho, pois possui até 30 alunos por turma (${mediaAlunosTurma})`
+    else if (mediaAlunosTurma <= 40) mensagemFinal = `Você precisa ter um segundo professor, pois possui até 40 alunos por turma (${mediaAlunosTurma})`
+    else mensagemFinal = `Você precisa dividir a turma em dois horários, pois possui mais de 40 alunos por turma (${mediaAlunosTurma})`
     
     //SAÍDA
-
+    document.write(mensagemFinal)
 
 </script>

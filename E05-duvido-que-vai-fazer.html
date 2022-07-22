@@ -11,12 +11,36 @@
     */
 
     //Entrada
-
+    const valorHora = Number(prompt("Qual o valor recebido por hora trabalhada?"))
+    const horasSemana = 40
+    const horasTrabalhadas17_20 = Number(prompt("Quantas horas trabalha entre 17:00 e 20:00 na semana?"))
+    const horasTrabalhadas20_22 = Number(prompt("Quantas horas trabalha entre 20:00 e 22:00 na semana?"))
 
     //Processamento
+    let mensagemFinal = ``
+    const salarioNormal = valorHora * horasSemana
+    let valorPago17_20 = 0
+    let valorPago20_22 = 0
 
+    if (horasTrabalhadas17_20 > 0) valorPago17_20 = valorHora + (valorHora * (30 / 100))
+    if (horasTrabalhadas20_22 > 0) valorPago20_22 = valorHora + (valorHora * (50 / 100))
+    const horasExtras = horasTrabalhadas17_20 + horasTrabalhadas20_22
+    const totalHorastrabalhadas = horasSemana + horasExtras
+    const salarioFinal = salarioNormal + valorPago17_20 + valorPago20_22
+
+    if ((horasExtras > salarioNormal * 0.3) && (horasExtras <= salarioNormal * 0.5)) {
+        mensagemFinal += `É preciso contratar mais um funcionário!<br>`
+    }
+    else if (horasExtras > salarioNormal * 0.5) {
+        mensagemFinal += `É preciso contratar mais dois funcionários!<br>`
+    }
+
+    if (horasExtras <= 25) mensagemFinal += `O funcionário ESTÁ dentro das regras da empresa!<br>`
+    else mensagemFinal += `O funcionário NÃO ESTÁ dentro das regras da empresa!<br>`
 
     //Saída
-
+    document.write(`O total de horas trabalhadas pelo funcionário foi de ${totalHorastrabalhadas}.<br>`)
+    document.write(`O salário pago foi de R$ ${salarioFinal.toFixed(2)}<br>`)
+    document.write(mensagemFinal)
     
 </script>

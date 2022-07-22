@@ -8,12 +8,15 @@
     */
 
     //ENTRADA
-
+    const horasTrabalhadas = Number(prompt("Informe a quantidade de horas trabalhadas diariamente:"))
 
     //PROCESSAMENTO
-
+    let mensagemFinal = ``
+    if (horasTrabalhadas <= 4) mensagemFinal = `Você trabalha em meio período (até 4 horas) - Horas diárias: ${horasTrabalhadas}`
+    else if (horasTrabalhadas <= 6) mensagemFinal = `Você trabalha como jovem aprendiz (até 6 horas) - Horas diárias: ${horasTrabalhadas}`
+    else mensagemFinal = `Você precisa ser contratado pela empresa (mais que 6 horas) - Horas diárias: ${horasTrabalhadas}`
     
     //SAÍDA
-
+    document.write(mensagemFinal)
 
 </script>
