@@ -7,15 +7,15 @@
     //ENTRADA
     const linguagensProgramacao = parseInt(prompt("Quantas linguagens de programação você conhece?"))
     const anosExperiencia = parseInt(prompt("Quantos anos de experiência você possui?"))
-    const cursoTecnico = prompt("Você possui curso técnico? (S-Sim | N-Não").toUpperCase()
-    const cursoGraduacao = prompt("Você possui curso de graduação? (S-Sim | N-Não").toUpperCase()
-    const cursoEspecializacao = prompt("Você possui curso de especialização? (S-Sim | N-Não").toUpperCase()
+    const cursoTecnico = prompt("Você possui curso técnico? (S-Sim | N-Não)").toUpperCase()
+    const cursoGraduacao = prompt("Você possui curso de graduação? (S-Sim | N-Não)").toUpperCase()
+    const cursoEspecializacao = prompt("Você possui curso de especialização? (S-Sim | N-Não)").toUpperCase()
     //PROCESSAMENTO
     let pontosProgramador = linguagensProgramacao + (anosExperiencia * 2)
     if (cursoTecnico === "S") pontosProgramador = pontosProgramador + 10
     if (cursoGraduacao === "S") pontosProgramador = pontosProgramador + 20
     if (cursoEspecializacao === "S") pontosProgramador = pontosProgramador + 30
-    
+
     if (pontosProgramador <= 20) document.write("Programador Juninho")
     else if (pontosProgramador > 20 && cursoGraduacao === "N") document.write("Júnior Experiente")
     else if (cursoGraduacao === "S" && pontosProgramador <= 40) document.write("Júnior Graduado")

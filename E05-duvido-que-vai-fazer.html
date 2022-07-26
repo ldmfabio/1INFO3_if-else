@@ -22,16 +22,19 @@
     let valorPago17_20 = 0
     let valorPago20_22 = 0
 
-    if (horasTrabalhadas17_20 > 0) valorPago17_20 = valorHora + (valorHora * (30 / 100))
-    if (horasTrabalhadas20_22 > 0) valorPago20_22 = valorHora + (valorHora * (50 / 100))
+    if (horasTrabalhadas17_20 > 0) valorPago17_20 = valorHora + (valorHora * (30 / 100)) * horasTrabalhadas17_20
+    if (horasTrabalhadas20_22 > 0) valorPago20_22 = valorHora + (valorHora * (50 / 100)) * horasTrabalhadas20_22
+    
     const horasExtras = horasTrabalhadas17_20 + horasTrabalhadas20_22
     const totalHorastrabalhadas = horasSemana + horasExtras
-    const salarioFinal = salarioNormal + valorPago17_20 + valorPago20_22
+    
+    const valorHorasExtras = valorPago17_20 + valorPago20_22
+    const salarioFinal = salarioNormal + valorHorasExtras
 
-    if ((horasExtras > salarioNormal * 0.3) && (horasExtras <= salarioNormal * 0.5)) {
+    if ((valorHorasExtras > salarioNormal * 0.3) && (valorHorasExtras <= salarioNormal * 0.5)) {
         mensagemFinal += `É preciso contratar mais um funcionário!<br>`
     }
-    else if (horasExtras > salarioNormal * 0.5) {
+    else if (valorHorasExtras > salarioNormal * 0.5) {
         mensagemFinal += `É preciso contratar mais dois funcionários!<br>`
     }
 
