@@ -8,10 +8,18 @@
     */
 
     //ENTRADA
-
+    const horasTrabalhadas = parseInt(prompt("Informe horas trabalhadas diariamente:"))
 
     //PROCESSAMENTO
-
+    if (horasTrabalhadas <= 4) {
+        document.write("Trabalho em meio período!")
+    }
+    else if (horasTrabalhadas <= 6) {
+        document.write("Trabalho como jovem aprendiz!")
+    }
+    else {
+        document.write("Precisa ser contratado pela empresa!")
+    }
     
     //SAÍDA
 

@@ -8,10 +8,20 @@
     */
 
     //ENTRADA
-
+    const numeroAluno = parseInt(prompt("Digite número de alunos:"))
+    const numeroTurmas = parseInt(prompt("Digite número de turmas:"))
 
     //PROCESSAMENTO
-
+    const mediaAlunosTurma = numeroAluno / numeroTurmas
+    if (mediaAlunosTurma <= 30) {
+        document.write("Poderá trabalhar sozinho!")
+    }
+    else if (mediaAlunosTurma <= 40) {
+        document.write("É necessário um segundo professor!")
+    }
+    else {
+        document.write("É necessário dividir a turma!")
+    }
     
     //SAÍDA
 
