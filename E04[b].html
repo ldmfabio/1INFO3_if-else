@@ -6,15 +6,22 @@
     Se o consumo for até 40 litros (inclusive), o programa mostrará o custo total e indicará que o percurso é curto.
     Se o consumo for até 60 litros (inclusive), o programa mostrará o custo total e indicará que o percurso é médio.
     Se o consumo ultrapassar 60 litros, o programa mostrará o custo total e indicará que o percurso é longo.
+    Apresente o valor total gasto em combustível e o tamanho do percurso percorrido pelo usuário do programa.
     */
 
     //Entrada
-
+    const litrosCombustivel = Number(prompt("Quantos litros de combustível são necessários para ir trabalhar semanalmente?"))
+    const precoCombustivel = Number(prompt("Qual o preço do litro do combustível?"))
 
     //Processamento
+    const gastoCombustivel = litrosCombustivel * precoCombustivel
+    let tamanhoPercurso = ``
 
+    if (litrosCombustivel <= 40) tamanhoPercurso = `Curto`
+    else if (litrosCombustivel <= 60) tamanhoPercurso = `Médio`
+    else tamanhoPercurso = `Longo`
 
     //Saída
-
+    document.write(`O percurso percorrido para ir ao trabalho é considerado de tamanho ${tamanhoPercurso}. O total gasto em combustível é de R$ ${gastoCombustivel.toFixed(2)}`)
     
 </script>

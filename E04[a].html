@@ -13,12 +13,18 @@
     */
 
     //Entrada
-
+    const linhasPrograma = parseInt(prompt("Informe quantas linhas o programa possui:"))
+    const ifElse = parseInt(prompt("Informe quantos if-else o programa possui:"))
 
     //Processamento
-
+    const totalPontos = linhasPrograma + (ifElse * 5)
+    let nivelDificuldade = ``
+    if (totalPontos <= 30) nivelDificuldade = `Aprendiz`
+    else if (totalPontos <= 50) nivelDificuldade = `Em evolução`
+    else if (totalPontos <= 70) nivelDificuldade = `Estagiário`
+    else nivelDificuldade = `Júnior`
 
     //Saída
-
+    document.write(`O total de pontos do programa contabiliza ${totalPontos} e o nível de dificuldade é o ${nivelDificuldade}`)
     
 </script>

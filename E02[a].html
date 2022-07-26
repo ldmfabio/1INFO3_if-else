@@ -1,32 +1,27 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <script>
-    //PROBLEMA
-    /*
+    /*PROBLEMA
     Faça um script que pergunte ao programador quantas linguagens de programação ele conhece. Cada linguagem de programação que conhece equivale a um ponto. O programa também deverá perguntar quantos anos de experiência possui, sendo que cada ano de experiência equivale a dois pontos. O programa também deverá perguntar se o programador possui curso técnico (10 pontos), se possui curso de graduação (20 pontos) e se possui especialização (30 pontos).
     Caso o programador possua até 20 pontos na classificação total, o programa deverá classificá-lo como "Programador Juninho". Caso o programador possua mais de 20 pontos, mas não possua curso de graduação, o programa deverá classificá-lo como "Júnior Experiente". Se possuir curso de graduação mas não ultrapassar os 40 pontos, o programa deverá classificá-lo como "Júnior Graduado". Possuindo até 50 pontos, o programa irá classificá-lo como "Pleno". Caso possua mais de 50 pontos, o programa irá classificá-lo como "Sênior".
-    Apresente o resultado em tela.
-    */
-
+    Apresente o resultado em tela.    */
     //ENTRADA
-    const linguagensProgramacao = parseInt(prompt("Quantas linguagens de programaçõ você conhece?"))
+    const linguagensProgramacao = parseInt(prompt("Quantas linguagens de programação você conhece?"))
     const anosExperiencia = parseInt(prompt("Quantos anos de experiência você possui?"))
-    const cursoTecnico = prompt("Você possui curso técnico? (S-Sim | N-Não)")
-    const cursoGraduacao = prompt("Você possui curso de graduação? (S-Sim | N-Não)")
-    const cursoEspecializacao = prompt("Você possui curso de especialização? (S-Sim | N-Não)")
-
+    const cursoTecnico = prompt("Você possui curso técnico? (S-Sim | N-Não").toUpperCase()
+    const cursoGraduacao = prompt("Você possui curso de graduação? (S-Sim | N-Não").toUpperCase()
+    const cursoEspecializacao = prompt("Você possui curso de especialização? (S-Sim | N-Não").toUpperCase()
     //PROCESSAMENTO
-    let mensagemFinal = ``
     let pontosProgramador = linguagensProgramacao + (anosExperiencia * 2)
-    if (cursoTecnico === "S") pontosProgramador += 10
-    if (cursoGraduacao === "S") pontosProgramador += 20
-    if (cursoEspecializacao === "S") pontosProgramador += 30
-    if (pontosProgramador <= 20) mensagemFinal = `Programador Juninho`
-    else if (pontosProgramador > 20 && cursoGraduacao === `N`) mensagemFinal = `Júnior Experiente`
-    else if (cursoGraduacao === `S` && pontosProgramador <= 40) mensagemFinal = `Júnior Graduado`
-    else if (pontosProgramador <= 50) mensagemFinal = `Pleno`
-    else mensagemFinal = `Sênior`
+    if (cursoTecnico === "S") pontosProgramador = pontosProgramador + 10
+    if (cursoGraduacao === "S") pontosProgramador = pontosProgramador + 20
+    if (cursoEspecializacao === "S") pontosProgramador = pontosProgramador + 30
     
+    if (pontosProgramador <= 20) document.write("Programador Juninho")
+    else if (pontosProgramador > 20 && cursoGraduacao === "N") document.write("Júnior Experiente")
+    else if (cursoGraduacao === "S" && pontosProgramador <= 40) document.write("Júnior Graduado")
+    else if (pontosProgramador <= 50) document.write("Pleno")
+    else document.write("Sênior")
     //SAÍDA
-    document.write(mensagemFinal)
+
 
 </script>
